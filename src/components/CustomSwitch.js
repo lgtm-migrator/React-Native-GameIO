@@ -62,6 +62,9 @@ export default function CustomSwitch({
                     }}>
                     {option2}
                 </Text>
+
+
+
             </TouchableOpacity>
         </View>
     );

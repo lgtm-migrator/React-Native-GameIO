@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
     View, Text, SafeAreaView, ScrollView, ImageBackground, TextInput
     , TouchableOpacity
@@ -8,19 +8,28 @@ import {
 
 import Feather from 'react-native-vector-icons/Feather'
 import BannerSlider from "../components/BannerSlider";
-import { sliderData } from "../model/data";
+import { freeGames, paidGames, sliderData } from "../model/data";
 import { windowHeight, windowWidth } from "../utils/Dimensions";
 import Carousel from 'react-native-snap-carousel';
+import CustomSwitch from "../components/CustomSwitch";
+import ListItem from "../components/ListItem";
 
 
 
 
 
-export default function HomeScreen() {
+
+export default function HomeScreen(navigation) {
+    const [gamesTab, SetGamesTab] = useState(1);
 
     const renderBanner = ({ item, index }) => {
         return <BannerSlider data={item} />;
-    }
+    };
+
+    const onSelectSwitch = (value) => {
+        SetGamesTab(value);
+    };
+
 
 
 
@@ -37,10 +46,13 @@ export default function HomeScreen() {
                     <Text style={{ fontSize: 17 }}>
                         Hello Buğra Öner
                     </Text>
-                    <ImageBackground
-                        source={require("../assets/Profil.jpg")}
-                        style={{ width: 35, height: 35 }}
-                        imageStyle={{ borderRadius: 25 }} />
+                    <TouchableOpacity onPress={() => null}>
+                        <ImageBackground
+                            source={require("../assets/Profil.jpg")}
+                            style={{ width: 35, height: 35 }}
+                            imageStyle={{ borderRadius: 25 }}
+                        />
+                    </TouchableOpacity>
                 </View>
 
 
@@ -79,15 +91,44 @@ export default function HomeScreen() {
 
 
                 <Carousel
-                    ref={c => {
-                        this._carousel = c;
-                    }}
+
                     data={sliderData}
                     renderItem={renderBanner}
                     sliderWidth={windowWidth - 40}
                     itemWidth={300}
                     loop={true}
                 />
+
+
+                <View>
+                    <CustomSwitch selectionMode={1}
+                        option1="Free To Play"
+                        option2="Paid Games"
+                        onSelectSwitch={onSelectSwitch} />
+                </View>
+                {gamesTab == 1 &&
+                    freeGames.map((item) => (
+                        <ListItem key={item.id}
+                            photo={item.poster}
+                            title={item.title}
+                            subTitle={item.subTitle}
+                            isFree={item.isFree}
+                        />
+                    ))
+                }
+
+                {gamesTab == 2 &&
+                    paidGames.map((item) => (
+                        <ListItem key={item.id}
+                            photo={item.poster}
+                            title={item.title}
+                            subTitle={item.subTitle}
+                            isFree={item.isFree}
+                            price={item.price}
+                        />
+                    ))}
+
+
             </ScrollView>
         </SafeAreaView>
     )
