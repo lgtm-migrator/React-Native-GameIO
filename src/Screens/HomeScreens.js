@@ -4,12 +4,26 @@ import {
     , TouchableOpacity
 } from "react-native";
 
+
+
 import Feather from 'react-native-vector-icons/Feather'
+import BannerSlider from "../components/BannerSlider";
 import { sliderData } from "../model/data";
+import { windowHeight, windowWidth } from "../utils/Dimensions";
+import Carousel from 'react-native-snap-carousel';
+
+
 
 
 
 export default function HomeScreen() {
+
+    const renderBanner = ({ item, index }) => {
+        return <BannerSlider data={item} />;
+    }
+
+
+
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
@@ -62,12 +76,18 @@ export default function HomeScreen() {
                     </TouchableOpacity>
                 </View>
 
+
+
                 <Carousel
-                    ref={(c) => { this._carousel = c; }}
+                    ref={c => {
+                        this._carousel = c;
+                    }}
                     data={sliderData}
-                    renderItem={this._renderItem}
-                    sliderWidth={sliderWidth}
-                    itemWidth={itemWidth} />
+                    renderItem={renderBanner}
+                    sliderWidth={windowWidth - 40}
+                    itemWidth={300}
+                    loop={true}
+                />
             </ScrollView>
         </SafeAreaView>
     )
