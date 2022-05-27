@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-const FavoriteScreen = () => {
+const MessagesScreen = () => {
   return (
     <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-      <Text>Favorite Screen</Text>
+      <Text>Messages Screen</Text>
     </View>
   )
 }
 
-export default FavoriteScreen
+export default MessagesScreen
