@@ -5,10 +5,10 @@ import CustomDrawer from '../components/CustomDrawer';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import ProfileScreen from '../screens/ProfileScreen';
-import MessagesScreen from '../screens/MessagesScreen';
-import MomentsScreen from '../screens/MomentsScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import ProfileScreen from '../Screens/ProfileScreen';
+import MessagesScreen from '../Screens/MessagesScreen';
+import MomentsScreen from '../Screens/MomentsScreen';
+import SettingsScreen from '../Screens/SettingsScreen';
 
 import TabNavigator from './TabNavigator';
 

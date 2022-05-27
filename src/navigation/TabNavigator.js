@@ -3,10 +3,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 
-import HomeScreen from '../screens/HomeScreen';
-import CartScreen from '../screens/CartScreen';
-import FavoriteScreen from '../screens/FavoriteScreen';
-import GameDetailsScreen from '../screens/GameDetailsScreen';
+// Screens 
+import HomeScreen from '../Screens/HomeScreen';
+import CartScreen from '../Screens/CartScreen';
+import FavoriteScreen from '../Screens/FavoriteScreen';
+import GameDetailsScreen from '../Screens/GameDetailsScreen';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
