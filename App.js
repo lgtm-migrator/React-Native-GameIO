@@ -27,7 +27,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Image from "./src/assets/gaming.svg"
-import HomeScreen from './src/Screens/HomeScreens';
+import HomeScreen from './src/Screens/HomeScreen';
 
 
 const Stack = createNativeStackNavigator();

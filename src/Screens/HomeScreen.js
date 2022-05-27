@@ -4,8 +4,6 @@ import {
     , TouchableOpacity
 } from "react-native";
 
-
-
 import Feather from 'react-native-vector-icons/Feather'
 import BannerSlider from "../components/BannerSlider";
 import { freeGames, paidGames, sliderData } from "../model/data";
@@ -13,10 +11,6 @@ import { windowHeight, windowWidth } from "../utils/Dimensions";
 import Carousel from 'react-native-snap-carousel';
 import CustomSwitch from "../components/CustomSwitch";
 import ListItem from "../components/ListItem";
-
-
-
-
 
 
 export default function HomeScreen(navigation) {
@@ -29,10 +23,6 @@ export default function HomeScreen(navigation) {
     const onSelectSwitch = (value) => {
         SetGamesTab(value);
     };
-
-
-
-
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
@@ -54,7 +44,6 @@ export default function HomeScreen(navigation) {
                         />
                     </TouchableOpacity>
                 </View>
-
 
                 <View style={{
                     flexDirection: "row",
@@ -88,17 +77,13 @@ export default function HomeScreen(navigation) {
                     </TouchableOpacity>
                 </View>
 
-
-
                 <Carousel
-
                     data={sliderData}
                     renderItem={renderBanner}
                     sliderWidth={windowWidth - 40}
                     itemWidth={300}
                     loop={true}
                 />
-
 
                 <View>
                     <CustomSwitch selectionMode={1}
@@ -127,7 +112,6 @@ export default function HomeScreen(navigation) {
                             price={item.price}
                         />
                     ))}
-
 
             </ScrollView>
         </SafeAreaView>

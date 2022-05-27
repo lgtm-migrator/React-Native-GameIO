@@ -37,12 +37,13 @@ export default function ListItem({ photo, title, subTitle, isFree, price, onPres
                 </View>
             </View>
 
-            <TouchableOpacity onPress={onPress} style={{
-                backgroundColor: '#0aada8',
-                padding: 10,
-                width: 100,
-                borderRadius: 10,
-            }}>
+            <TouchableOpacity onPress={onPress}
+                style={{
+                    backgroundColor: '#0aada8',
+                    padding: 10,
+                    width: 100,
+                    borderRadius: 10,
+                }}>
                 <Text style={{
                     color: '#fff',
                     textAlign: 'center',
@@ -52,8 +53,6 @@ export default function ListItem({ photo, title, subTitle, isFree, price, onPres
                     {isFree == 'Yes' && 'Play'}
                     {isFree == 'No' && price}
                 </Text>
-
-
             </TouchableOpacity>
         </View>
     );
