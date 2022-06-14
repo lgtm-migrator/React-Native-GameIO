@@ -94,7 +94,7 @@ export default function HomeScreen(navigation) {
 
                     data={sliderData}
                     renderItem={renderBanner}
-                    sliderWidth={windowWidth - 40}
+                    sliderWidth={windowWidth - 35}
                     itemWidth={300}
                     loop={true}
                 />

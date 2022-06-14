@@ -13,6 +13,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  StyleSheet
 } from 'react-native';
 
 import {
@@ -23,11 +24,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Image from "./src/assets/gaming.svg"
 import HomeScreen from './src/Screens/HomeScreens';
+
+import LinearGradient from 'react-native-linear-gradient';
 
 
 const Stack = createNativeStackNavigator();
@@ -46,13 +48,9 @@ const App = () => {
 
 const Main = ({ navigation }) => {
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-      }}>
+    <LinearGradient
+      colors={['#00C6FB', '#005BEA']}
+      style={styles.body}>
       <View style={{ marginTop: 25 }}>
         <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#20315f' }}>
           GAMEIO
@@ -61,17 +59,24 @@ const Main = ({ navigation }) => {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: "center" }}>
         <Image width={275} height={275} style={{ transform: [{ rotate: "-15deg" }] }} />
       </View>
+
       <TouchableOpacity
         onPress={() => navigation.navigate('Home')}
-        style={{
-          backgroundColor: '#20315f', borderRadius: 10, padding: 20, width: '90%', flexDirection: 'row',
-          justifyContent: 'space-between', marginBottom: 50,
-        }}>
-        <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>
-          Let's Begin
-        </Text>
-      </TouchableOpacity>
-    </SafeAreaView>
+        style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        <LinearGradient colors={['#C974FF', '#AEBAF8']}
+          style={{
+            borderRadius: 10, padding: 25, width: 300,
+            marginBottom: 50,
+          }}>
+
+          <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>
+            Let's Begin
+          </Text>
+        </LinearGradient>
+      </TouchableOpacity >
+
+    </LinearGradient >
+
   );
 
 }
@@ -79,17 +84,25 @@ const Main = ({ navigation }) => {
 /*
 const Home = () => {
   return (
-    <SafeAreaView>
-      <View>
-        <Text>Home</Text>
-      </View>
-    </SafeAreaView>
-  );
+        <SafeAreaView>
+          <View>
+            <Text>Home</Text>
+          </View>
+        </SafeAreaView>
+        );
 }
 
-*/
+        */
 
 
 
+const styles = StyleSheet.create({
+  body: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  }
+});
 
 export default App;
