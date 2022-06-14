@@ -1,18 +1,23 @@
 import React, { useState } from "react"
 import {
     View, Text, SafeAreaView, ScrollView, ImageBackground, TextInput
-    , TouchableOpacity
+    , TouchableOpacity, Platform
 } from "react-native";
+import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 
 
 
 import Feather from 'react-native-vector-icons/Feather'
+
 import BannerSlider from "../components/BannerSlider";
 import { freeGames, paidGames, sliderData } from "../model/data";
 import { windowHeight, windowWidth } from "../utils/Dimensions";
 import Carousel from 'react-native-snap-carousel';
 import CustomSwitch from "../components/CustomSwitch";
 import ListItem from "../components/ListItem";
+
+
+import LinearGradient from 'react-native-linear-gradient';
 
 
 
@@ -35,13 +40,14 @@ export default function HomeScreen(navigation) {
 
 
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+        <LinearGradient
+            colors={['#c22ED0', '#5FFAE0']}>
             <ScrollView style={{ padding: 20 }}>
                 <View
                     style={{
                         flexDirection: "row",
                         justifyContent: "space-between",
-                        marginBottom: 20,
+                        marginBottom: 15,
                     }}>
                     <Text style={{ fontSize: 17 }}>
                         Hello Buğra Öner
@@ -66,39 +72,35 @@ export default function HomeScreen(navigation) {
 
                 }}>
                     <Feather
-                        name="Search"
+                        name=""
                         size={20}
-                        color="#000"
+                        color="#C6C6C6"
                         style={{ marginRight: 5 }}
-
                     />
                     <TextInput placeholder="Search" />
                 </View>
 
                 <View style={{
                     flexDirection: "row",
-                    marginVertical: 15,
-                    justifyContent: "space-between"
+                    marginVertical: 10,
+                    justifyContent: "space-between",
                 }}>
-                    <Text>
+                    <Text
+                        style={{ color: "black" }}>
                         Upcoming Games
                     </Text>
                     <TouchableOpacity onPress={() => { }}>
-                        <Text style={{ color: "#0aada8" }}>See All</Text>
+                        <Text style={{ color: "black" }}>See All</Text>
                     </TouchableOpacity>
                 </View>
 
-
-
                 <Carousel
-
                     data={sliderData}
                     renderItem={renderBanner}
                     sliderWidth={windowWidth - 35}
                     itemWidth={300}
                     loop={true}
                 />
-
 
                 <View>
                     <CustomSwitch selectionMode={1}
@@ -130,7 +132,7 @@ export default function HomeScreen(navigation) {
 
 
             </ScrollView>
-        </SafeAreaView>
+        </LinearGradient>
     )
 }
 

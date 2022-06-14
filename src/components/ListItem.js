@@ -18,7 +18,7 @@ export default function ListItem({ photo, title, subTitle, isFree, price, onPres
                 <View style={{ width: windowWidth - 220 }}>
                     <Text
                         style={{
-                            color: '#333',
+                            color: 'black',
                             fontFamily: 'Roboto-Medium',
                             fontSize: 14,
                         }}>

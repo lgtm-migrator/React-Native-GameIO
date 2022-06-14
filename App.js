@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import type { Node } from 'react';
+
 import {
   SafeAreaView,
   Text,
@@ -49,7 +49,7 @@ const App = () => {
 const Main = ({ navigation }) => {
   return (
     <LinearGradient
-      colors={['#00C6FB', '#005BEA']}
+      colors={['#EF33B1', '#005BEA']}
       style={styles.body}>
       <View style={{ marginTop: 25 }}>
         <Text style={{ fontSize: 30, fontWeight: 'bold', color: '#20315f' }}>
@@ -63,9 +63,9 @@ const Main = ({ navigation }) => {
       <TouchableOpacity
         onPress={() => navigation.navigate('Home')}
         style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-        <LinearGradient colors={['#C974FF', '#AEBAF8']}
+        <LinearGradient colors={['#EF33B1', '#AEBAF8']}
           style={{
-            borderRadius: 10, padding: 25, width: 300,
+            borderRadius: 10, padding: 20, width: '90%',
             marginBottom: 50,
           }}>
 
